@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить вопрос и ответы</title>
+</head>
+<body>
+<h1>Добавление вопроса и ответов</h1>
+<form action="#" th:action="@{/savea}" th:object="${anqs}"
+      method="POST">
+
+    <br><input type="text" th:field="*{qtext}" placeholder="Введите вопрос" required="required" class="form-control mb-4 col-4"></br>
+    <br><input type="text" th:field="*{atext1}" placeholder="Введите 1 вариант ответа" required="required" class="form-control mb-4 col-4"></br>
+    <br><input type="text" th:field="*{atext2}" placeholder="Введите 2 вариант овтета" required="required" class="form-control mb-4 col-4"></br>
+    <br><input type="text" th:field="*{atext3}" placeholder="Введите 3 вариант ответа" required="required" class="form-control mb-4 col-4"></br>
+    <br><input type="text" th:field="*{atext4}" placeholder="Введите 4 вариант ответа" required="required" class="form-control mb-4 col-4"></br>
+    <br><input type="text" th:field="*{atext5}" placeholder="Введите 5 вариант ответа" required="required" class="form-control mb-4 col-4"></br>
+    <br><input type="text" th:field="*{anid}" placeholder="Введите код анкеты" required="required" class="form-control mb-4 col-4"></br>
+    <br><button type="submit" class="btn btn-success">Добавить</button></br>
+</form>
+<a th:href = "@{/showAnQ}">Назад</a>
+</body>
+</html>

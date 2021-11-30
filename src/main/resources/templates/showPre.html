@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список преподавателей</title>
+</head>
+<body>
+<h1>Список преподавателей</h1>
+<a th:href = "@{/addPre}">Добавить преподавателя</a>
+<table border="1" cellpadding="10px">
+  <thead>
+  <tr>
+    <th>Код преподавателя</th>
+    <th>ФИО</th>
+    <th>Код кафедры</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="emp : ${plist}">
+    <td th:text="${emp.pid}">pid</td>
+    <td th:text="${emp.ptext}">ptext</td>
+    <td th:text="${emp.kk}">kk</td>
+
+    <td><a th:href="@{/deletePbyid/{id}(id=${emp.pid})}"
+           class="btn btn-danger">
+      </i> Удалить</a>
+
+
+      <a th:href="@{/updatePbyid/{id}(id=${emp.pid})}"
+         class="btn btn-success">
+        </i> Изменить</a></td>
+  </tbody>
+</table>
+<a th:href = "@{/login}">Выйти</a>
+</body>
+</html>

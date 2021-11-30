@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить пользователя</title>
+</head>
+<body>
+<h1>Добавление пользователя</h1>
+<form action="#" th:action="@{/save}" th:object="${users}"
+      method="POST">
+
+    <br><input type="text" th:field="*{login}" placeholder="Введите логин пользователя" required="required" class="form-control mb-4 col-4"></br>
+
+    <br><input type="text" th:field="*{pass}" placeholder="Введите пароль пользователя" required="required" class="form-control mb-4 col-4"></br>
+
+    <br><input type="text" th:field="*{role}" placeholder="Введите роль пользователя" required="required" class="form-control mb-4 col-4"></br>
+
+    <br><button type="submit" class="btn btn-success">Добавить</button></br>
+</form>
+<a th:href = "@{/showUsers}">Назад</a>
+</body>
+</html>

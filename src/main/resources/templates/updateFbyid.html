@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Изменить факультет</title>
+</head>
+<body>
+<h1>Изменение факультета</h1>
+<form action="#" th:action="@{/savefac}" th:object="${fc}"
+      method="POST">
+    <br><input type="text" th:field="*{id}" required class="form-control mb-4 col-4"></br>
+
+    <br><input type="text" th:field="*{facul}" required class="form-control mb-4 col-4"></br>
+
+    <br><button type="submit" class="btn btn-success">Изменить</button></br>
+</form>
+<a th:href = "@{/showFac}">Назад</a>
+</body>
+</html>

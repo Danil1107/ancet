@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список вопросов и ответов</title>
+</head>
+<body>
+<h1>Список вопросов и ответов</h1>
+<a th:href = "@{/addAnQ}">Добавить вопрос и ответы</a>
+<table border="1" cellpadding="10px">
+    <thead>
+    <tr>
+        <th>Код вопроса и ответов</th>
+        <th>Вопрос</th>
+        <th>Вариант ответа 1</th>
+        <th>Вариант ответа 2</th>
+        <th>Вариант ответа 3</th>
+        <th>Вариант ответа 4</th>
+        <th>Вариант ответа 5</th>
+        <th>Код анкеты</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="emp : ${anlist}">
+        <td th:text="${emp.aid}">aid</td>
+        <td th:text="${emp.qtext}">qtext</td>
+        <td th:text="${emp.atext1}">atext1</td>
+        <td th:text="${emp.atext2}">atext2</td>
+        <td th:text="${emp.atext3}">atext3</td>
+        <td th:text="${emp.atext4}">atext4</td>
+        <td th:text="${emp.atext5}">atext5</td>
+        <td th:text="${emp.anid}">anid</td>
+
+        <td><a th:href="@{/deleteAnQbyid/{id}(id=${emp.aid})}"
+               class="btn btn-danger">
+            </i> Удалить</a>
+
+
+            <a th:href="@{/updateAnQbyid/{id}(id=${emp.aid})}"
+               class="btn btn-success">
+                </i> Изменить</a></td>
+    </tbody>
+</table>
+<a th:href = "@{/login}">Выйти</a>
+</body>
+</html>

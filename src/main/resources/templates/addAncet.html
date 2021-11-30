@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить анкету</title>
+</head>
+<body>
+<h1>Добавление анкеты</h1>
+<form action="#" th:action="@{/saveanc}" th:object="${ancets}"
+      method="POST">
+
+    <br><input type="text" th:field="*{antext}" placeholder="Введите описание анкеты" required="required" class="form-control mb-4 col-4"></br>
+
+    <br><button type="submit" class="btn btn-success">Добавить</button></br>
+</form>
+<a th:href = "@{/showAncets}">Назад</a>
+</body>
+</html>

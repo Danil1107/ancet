@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список пользователей</title>
+</head>
+<body>
+<h1>Список пользователей</h1>
+<a th:href = "@{/addUser}">Добавить пользователя</a>
+<table border="1" cellpadding="10px">
+    <thead>
+    <tr>
+        <th>Код пользователя</th>
+        <th>Логин</th>
+        <th>Пароль</th>
+        <th>Роль</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="emp : ${uslist}">
+        <td th:text="${emp.id}">id</td>
+        <td th:text="${emp.login}">login</td>
+        <td th:text="${emp.pass}">pass</td>
+        <td th:text="${emp.role}">role</td>
+
+
+        <td><a th:href="@{/deleteUsbyid/{id}(id=${emp.id})}"
+               class="btn btn-danger">
+            </i> Удалить</a>
+
+
+            <a th:href="@{/updateUsbyid/{id}(id=${emp.id})}"
+               class="btn btn-success">
+                </i> Изменить</a></td>
+    </tbody>
+</table>
+<a th:href = "@{/login}">Выйти</a>
+</body>
+</html>

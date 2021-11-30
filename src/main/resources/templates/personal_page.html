@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Страница админа</title>
+</head>
+<body>
+<h1>Личный кабинет : <span th:text="${userLogin}"></span></h1>
+<br><a th:href = "@{/showUsers}">Список пользователей</a></br>
+<br><a th:href = "@{/showAncets}">Список анкет</a></br>
+<br><a th:href = "@{/showFac}">Список факультетов</a></br>
+<br><a th:href = "@{/showKaf}">Список кафедр</a></br>
+<br><a th:href = "@{/showPre}">Список преподавателей</a></br>
+<br><a th:href = "@{/showAnQ}">Список вопросов и ответов</a></br>
+</body>
+</html>

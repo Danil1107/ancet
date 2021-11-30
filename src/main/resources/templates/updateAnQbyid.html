@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Изменить вопрос и ответы</title>
+</head>
+<body>
+<h1>Изменение вопроса и ответов</h1>
+<form action="#" th:action="@{/savea}" th:object="${af}"
+      method="POST">
+    <br><input type="text" th:field="*{aid}" required class="form-control mb-4 col-4"></br>
+    <br><input type="text" th:field="*{qtext}" required class="form-control mb-4 col-4"></br>
+    <br><input type="text" th:field="*{atext1}" required class="form-control mb-4 col-4"></br>
+    <br><input type="text" th:field="*{atext2}" required class="form-control mb-4 col-4"></br>
+    <br><input type="text" th:field="*{atext3}" required class="form-control mb-4 col-4"></br>
+    <br><input type="text" th:field="*{atext4}" required class="form-control mb-4 col-4"></br>
+    <br><input type="text" th:field="*{atext5}" required class="form-control mb-4 col-4"></br>
+    <br><input type="text" th:field="*{anid}" required class="form-control mb-4 col-4"></br>
+    <br><button type="submit" class="btn btn-success">Изменить</button></br>
+</form>
+<a th:href = "@{/showAnQ}">Назад</a>
+</body>
+</html>

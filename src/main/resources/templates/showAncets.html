@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список анкет</title>
+</head>
+<body>
+<h1>Список анкет</h1>
+<a th:href = "@{/addAncet}">Добавить анкету</a>
+<table border="1" cellpadding="10px">
+    <thead>
+    <tr>
+        <th>Код анкеты</th>
+        <th>Описание</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="emp : ${anlist}">
+        <td th:text="${emp.id}">id</td>
+        <td th:text="${emp.antext}">antext</td>
+
+        <td><a th:href="@{/deleteAnbyid/{id}(id=${emp.id})}"
+               class="btn btn-danger">
+            </i> Удалить</a>
+
+
+            <a th:href="@{/updateAnbyid/{id}(id=${emp.id})}"
+               class="btn btn-success">
+                </i> Изменить</a></td>
+    </tbody>
+</table>
+<a th:href = "@{/login}">Выйти</a>
+</body>
+</html>

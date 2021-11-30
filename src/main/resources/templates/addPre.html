@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить преподавателя</title>
+</head>
+<body>
+<h1>Добавление преподавателя</h1>
+<form action="#" th:action="@{/savepre}" th:object="${pres}"
+      method="POST">
+
+    <br><input type="text" th:field="*{ptext}" placeholder="Введите ФИО преподавателя" required="required" class="form-control mb-4 col-4"></br>
+    <br><input type="text" th:field="*{kk}" placeholder="Введите код кафедры" required="required" class="form-control mb-4 col-4"></br>
+    <br><button type="submit" class="btn btn-success">Добавить</button></br>
+</form>
+<a th:href = "@{/showPre}">Назад</a>
+</body>
+</html>

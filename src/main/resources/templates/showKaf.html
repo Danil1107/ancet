@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список кафедр</title>
+</head>
+<body>
+<h1>Список кафедр</h1>
+<a th:href = "@{/addKaf}">Добавить кафедру</a>
+<table border="1" cellpadding="10px">
+  <thead>
+  <tr>
+    <th>Код кафедры</th>
+    <th>Наименование</th>
+    <th>Код факультета</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="emp : ${klist}">
+    <td th:text="${emp.idk}">idk</td>
+    <td th:text="${emp.ktext}">ktext</td>
+    <td th:text="${emp.fk}">fk</td>
+
+    <td><a th:href="@{/deleteKbyid/{id}(id=${emp.idk})}"
+           class="btn btn-danger">
+      </i> Удалить</a>
+
+
+      <a th:href="@{/updateKbyid/{id}(id=${emp.idk})}"
+         class="btn btn-success">
+        </i> Изменить</a></td>
+  </tbody>
+</table>
+<a th:href = "@{/login}">Выйти</a>
+</body>
+</body>
+</html>
